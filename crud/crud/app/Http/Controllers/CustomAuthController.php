@@ -11,7 +11,7 @@ class CustomAuthController extends Controller
 {
     public function index()
     {
-        return view('auth.registration');
+        return view('auth.login');
     }
 
     public function registration()
@@ -46,8 +46,6 @@ class CustomAuthController extends Controller
         ]);
     }
 
-        return view('auth.login');
-    }
 
     public function customLogin(Request $request)
     {
