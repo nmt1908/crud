@@ -15,3 +15,4 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::delete('/delete-user/{id}', [CustomAuthController::class, 'deleteUser'])->name('delete.user');
 Route::get('listuser', [CustomAuthController::class, 'listuser'])->name('listuser');
+Route::get('/', [CustomAuthController::class, 'index']);
