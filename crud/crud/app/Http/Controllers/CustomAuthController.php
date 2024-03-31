@@ -70,5 +70,9 @@ class CustomAuthController extends Controller
 
         return redirect("login")->withSuccess('You are not allowed to access');
     }
-
+    public function listuser()
+    {
+        $listUser = User::paginate(5);
+        return view('listuser', ['listUser' => $listUser]);
+    }
 }
