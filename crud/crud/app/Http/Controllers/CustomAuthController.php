@@ -75,4 +75,10 @@ class CustomAuthController extends Controller
         $listUser = User::paginate(5);
         return view('listuser', ['listUser' => $listUser]);
     }
+    public function signOut() {
+        Session::flush();
+        Auth::logout();
+
+        return Redirect('login');
+    }
 }
