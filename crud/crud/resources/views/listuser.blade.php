@@ -25,8 +25,13 @@
                         <td>{{$user->phone}}</td>
                         <td>{{$user->img}}</td>
                         <td>
-                            <a href="#">Sửa</a> | 
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal{{$user->id}}">
+                            <button type="button" class="btn btn-primary" >
+                                <a href="{{ route('user.readUser', ['id' => $user->id] )}}">View</a>
+                            </button>|
+                            <button type="button" class="btn btn-success" >
+                                <a href="{{ route('user.updateUser', ['id' => $user->id] )}}">Sua</a>
+                            </button> | 
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$user->id}}">
                                 Xóa
                             </button>
                         </td>
@@ -34,7 +39,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $listUser->links() }}
+        {{ $listUser->links('pagination::bootstrap-5',) }}
     @endif
 </div>
 
