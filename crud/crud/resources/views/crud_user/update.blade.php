@@ -37,6 +37,15 @@
                                         <span class="text-danger">{{ $errors->first('password') }}</span>
                                     @endif
                                 </div>
+                                <div class="form-group mb-3">
+                                    <label for="updateImage">Ảnh mới:</label>
+                                    <input type="file" placeholder="Hãy nhập mật khẩu mới" id="img" value="{{ $user->img}}" class="form-control hidden"
+                                           name="img" required onchange=(this) >
+                                    @if ($errors->has('img'))
+                                        <span class="text-danger">{{ $errors->first('img') }}</span>
+                                    @endif
+                                    <img id="avatar" class="thumbnail" width="100px" src="{{ asset('images/'.$user->img)}}">
+                                </div>
 
                                 <div class="d-grid mx-auto">
                                     <input type="submit" ></input>
@@ -48,4 +57,7 @@
             </div>
         </div>
     </main>
+@endsection
+@section('scripts')
+    <script src="{{ asset('storage/js/custom.js') }}"></script>
 @endsection
