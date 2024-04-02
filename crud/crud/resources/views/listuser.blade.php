@@ -25,11 +25,11 @@
                         <td>{{$user->phone}}</td>
                         <td>{{$user->img}}</td>
                         <td>
-                            <button type="button" class="btn btn-primary" >
-                                <a href="{{ route('user.readUser', ['id' => $user->id] )}}">View</a>
+                            <button type="button" class="btn btn-primary">
+                                <a href="{{ route('user.readUser', ['id' => $user->id] )}}" style="color: white;">Xem</a>
                             </button>|
-                            <button type="button" class="btn btn-success" >
-                                <a href="{{ route('user.updateUser', ['id' => $user->id] )}}">Sua</a>
+                            <button type="button" class="btn btn-success">
+                                <a href="{{ route('user.updateUser', ['id' => $user->id] )}}" style="color: white;">Sửa</a>
                             </button> | 
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal{{$user->id}}">
                                 Xóa
@@ -39,7 +39,7 @@
                 @endforeach
             </tbody>
         </table>
-        {{ $listUser->links('pagination::bootstrap-5',) }}
+        {{ $listUser->links('pagination::bootstrap-5') }}
     @endif
 </div>
 
