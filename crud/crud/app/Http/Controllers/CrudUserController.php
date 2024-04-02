@@ -44,5 +44,11 @@ class CrudUserController extends Controller
 
         return redirect("listuser")->withSuccess('You have signed-in');
     }
+    public function readUser(Request $request) {
+        $user_id = $request->get('id');
+        $user = User::find($user_id);
+
+        return view('crud_user.read', ['user' => $user]);
+    }
 
 }
