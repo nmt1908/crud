@@ -19,7 +19,6 @@ Route::get('listuser', [CustomAuthController::class, 'listuser'])->name('listuse
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 Route::get('read', [CrudUserController::class, 'readUser'])->name('user.readUser');
-
 Route::get('/', function () {
     return redirect()->route('login');
 });

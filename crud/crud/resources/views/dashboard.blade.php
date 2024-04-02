@@ -5,11 +5,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('storage/css/login.css')}}">
     <link rel="stylesheet" href="{{ asset('storage/css/list.css')}}">
-    <link rel="stylesheet" href="{{ asset('storage/css/dashboard.css')}}">
+    <link rel="stylesheet" href="{{ asset('storage/css/update.css')}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-<nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-dark navbar-expand-lg mb-5" style="background-color: #007bff;">
     <div class="container">
         <a class="navbar-brand mr-auto" href="#">CRUD-USER</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

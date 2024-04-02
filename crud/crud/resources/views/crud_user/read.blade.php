@@ -10,6 +10,8 @@
                             <th>ID</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>SDT</th>
+                            <th>Hình ảnh</th>
                         </tr>
                     </thead>
                     <tbody>
