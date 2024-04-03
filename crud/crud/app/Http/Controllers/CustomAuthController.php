@@ -26,14 +26,26 @@ class CustomAuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
             'phone' => 'required',
-            'img' => 'required',
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
-        $data = $request->all();
+        $imagePath = null;
+
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+            $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images'), $imageName);
+            $imagePath = 'images/' . $imageName;
+        }
+
+        $data = $request->except('img');
+        $data['img'] = $imagePath;
+
         $check = $this->create($data);
 
         return redirect("dashboard")->withSuccess('You have signed-in');
     }
+
 
     public function create(array $data)
     {

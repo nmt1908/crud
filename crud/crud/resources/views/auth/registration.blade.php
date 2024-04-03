@@ -7,7 +7,7 @@
                     <div class="card">
                         <h3 class="card-header text-center" style="color:#007bff">Đăng Ký</h3>
                         <div class="card-body">
-                            <form action="{{ route('register.custom') }}" method="POST">
+                            <form action="{{ route('register.custom') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group mb-3">
                                     <label for="registerUsername">Tên đăng nhập:</label>

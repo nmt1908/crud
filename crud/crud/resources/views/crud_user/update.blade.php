@@ -8,7 +8,7 @@
                     <div class="card">
                         <h3 class="card-header text-center">Update User</h3>
                         <div class="card-body">
-                            <form action="{{ route('user.postUpdateUser') }}" method="POST">
+                            <form action="{{ route('user.postUpdateUser') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <input name="id" type="hidden" value="{{$user->id}}">
                                 <div class="form-group mb-3">
@@ -44,7 +44,7 @@
                                     @if ($errors->has('img'))
                                         <span class="text-danger">{{ $errors->first('img') }}</span>
                                     @endif
-                                    <img id="avatar" class="thumbnail" width="100px" src="{{ asset('images/'.$user->img)}}">
+                                    <img id="avatar" class="thumbnail" width="100px" src="{{ asset($user->img) }}">
                                 </div>
 
                                 <div class="d-grid mx-auto">
