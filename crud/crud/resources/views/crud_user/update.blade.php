@@ -40,7 +40,7 @@
                                 <div class="form-group mb-3">
                                     <label for="updateImage">Ảnh mới:</label>
                                     <input type="file" placeholder="Hãy nhập mật khẩu mới" id="img" value="{{ $user->img}}" class="form-control hidden"
-                                           name="img" required onchange=(this) >
+                                           name="img" required onchange=(this) style="display: none !important;">
                                     @if ($errors->has('img'))
                                         <span class="text-danger">{{ $errors->first('img') }}</span>
                                     @endif

@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="form-group mb-3">
                                     <label for="registerImage">Chọn ảnh:</label>
-                                    <input type="file" id="img" class="form-control hidden" name="img" onchange=(this)>
+                                    <input type="file" id="img" class="form-control" name="img" onchange=(this) style="display: none !important;">
                                     <img id="avatar" class="thumbnail" width="100px" src=".././storage/img/new_seo-10-512.png">
                                     @if ($errors->has('img'))
                                         <span class="text-danger">{{ $errors->first('img') }}</span>
