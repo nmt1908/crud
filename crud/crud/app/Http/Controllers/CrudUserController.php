@@ -34,7 +34,7 @@ class CrudUserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,id,'.$input['id'],
             'password' => 'required|min:6',
-            'img' => 'image|mimes:jpeg,png,jpg,gif', // Đặt kích thước tối đa cho hình ảnh
+            'img' => 'image|mimes:jpeg,png,jpg,gif', 
         ]);
 
         $user = User::find($input['id']);
@@ -42,12 +42,12 @@ class CrudUserController extends Controller
         $user->email = $input['email'];
         $user->password = Hash::make($input['password']);
 
-        // Xử lý hình ảnh mới nếu có
+
         if ($request->hasFile('img')) {
             $image = $request->file('img');
             $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $imageName);
-            $user->img = 'images/' . $imageName; // Lưu đường dẫn của hình ảnh mới vào cơ sở dữ liệu
+            $user->img = 'images/' . $imageName; 
         }
 
         $user->save();
