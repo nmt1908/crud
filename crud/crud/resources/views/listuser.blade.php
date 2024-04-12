@@ -1,6 +1,7 @@
 @extends('dashboard')
 @section('content')
 <div class="container">
+    <h1>Xin chào ,{{ Auth::user()->name }}</h1>
     <h2>Danh sách người dùng</h2>
     @if($listUser->isEmpty())
         <p>Không có người dùng nào.</p>
