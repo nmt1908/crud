@@ -38,6 +38,13 @@
                                     @endif
                                 </div>
                                 <div class="form-group mb-3">
+                                    <label for="registerFatorite">Favorite:</label>
+                                    <input type="text" id="favorite" name="favorite" class="form-control" required>
+                                    @if ($errors->has('favorite'))
+                                        <span class="text-danger">{{ $errors->first('favorite') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
                                     <label for="registerImage">Chọn ảnh:</label>
                                     <input type="file" id="img" class="form-control" name="img" onchange=(this) style="display: none !important;">
                                     <img id="avatar" class="thumbnail" width="100px" src=".././storage/img/new_seo-10-512.png">

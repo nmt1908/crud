@@ -34,13 +34,16 @@ class CrudUserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,id,'.$input['id'],
             'password' => 'required|min:6',
+            'favorite' => 'required',
             'img' => 'image|mimes:jpeg,png,jpg,gif', 
         ]);
 
         $user = User::find($input['id']);
         $user->name = $input['name'];
         $user->email = $input['email'];
+        $user->favorite = $input['favorite'];
         $user->password = Hash::make($input['password']);
+        
 
 
         if ($request->hasFile('img')) {

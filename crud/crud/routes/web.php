@@ -22,4 +22,5 @@ Route::get('read', [CrudUserController::class, 'readUser'])->name('user.readUser
 Route::get('/', function () {
     return redirect()->route('login');
 });
+Route::get('/xss', [CustomAuthController::class, 'xss'])->name('xss');
 

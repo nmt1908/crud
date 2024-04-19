@@ -20,6 +20,7 @@
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->phone}}</td>
+                            <td>{{$user->fatorite}}</td>
                             <td><img src="{{ asset($user->img) }}" alt="" width="150"></td>
                         </tr>
                     </tbody>

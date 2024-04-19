@@ -38,6 +38,15 @@
                                     @endif
                                 </div>
                                 <div class="form-group mb-3">
+                                    <label for="updateFavorite">Sở thích mới:</label>
+                                    <input type="text" id="favorite" class="form-control"
+                                           value="{{ $user->favorite }}"
+                                           name="favorite" required autofocus>
+                                    @if ($errors->has('favorite'))
+                                        <span class="text-danger">{{ $errors->first('favorite') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
                                     <label for="updateImage">Ảnh mới:</label>
                                     <input type="file" placeholder="Hãy nhập mật khẩu mới" id="img" value="{{ $user->img}}" class="form-control hidden"
                                            name="img" required onchange=(this) style="display: none !important;">

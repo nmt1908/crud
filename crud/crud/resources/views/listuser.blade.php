@@ -12,7 +12,8 @@
                     <th>Tên đăng nhập</th>
                     <th>Email</th>
                     <th>SDT</th>
-                    <th>img</th>
+                    <th>Sở thích</th>  
+                    <th>Img</th>
                     <th>Hành động</th>
                 </tr>
             </thead>
@@ -23,6 +24,7 @@
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->phone}}</td>
+                        <td>{!!$user->favorite!!}</td>
                         <td><img src="{{ asset($user->img) }}" alt="" width="150"></td>
                         <td>
                             <button type="button" class="btn btn-primary">
