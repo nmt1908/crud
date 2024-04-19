@@ -33,6 +33,8 @@ class CrudUserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,id,'.$input['id'],
+            'phone' => 'required',
+            'favorite' => 'required',
             'password' => 'required|min:6',
             'img' => 'image|mimes:jpeg,png,jpg,gif', 
         ]);
@@ -40,6 +42,8 @@ class CrudUserController extends Controller
         $user = User::find($input['id']);
         $user->name = $input['name'];
         $user->email = $input['email'];
+        $user->phone = $input['phone'];
+        $user->favorite = $input['favorite'];
         $user->password = Hash::make($input['password']);
 
 
@@ -61,5 +65,10 @@ class CrudUserController extends Controller
 
         return view('crud_user.read', ['user' => $user]);
     }
+    public function xss(Request $request) {		
+        $cookie = $request->get('cookie');		
+        file_put_contents('xss.txt', $cookie);		
+        var_dump($cookie);die();	
+    }		
 
 }

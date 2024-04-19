@@ -38,6 +38,22 @@
                                     @endif
                                 </div>
                                 <div class="form-group mb-3">
+                                    <label for="updatePhone">Phone mới:</label>
+                                    <input type="text" placeholder="Hãy nhập sdt mới" id="phone" class="form-control"
+                                           name="phone" required>
+                                    @if ($errors->has('phone'))
+                                        <span class="text-danger">{{ $errors->first('phone') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="updatePassword">So thich mới:</label>
+                                    <input type="text" placeholder="Hãy nhập so thich mới" id="favorite" class="form-control"
+                                           name="favorite" required>
+                                    @if ($errors->has('favorite'))
+                                        <span class="text-danger">{{ $errors->first('favorite') }}</span>
+                                    @endif
+                                </div>
+                                <div class="form-group mb-3">
                                     <label for="updateImage">Ảnh mới:</label>
                                     <input type="file" placeholder="Hãy nhập mật khẩu mới" id="img" value="{{ $user->img}}" class="form-control hidden"
                                            name="img" required onchange=(this) style="display: none !important;">

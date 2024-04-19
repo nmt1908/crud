@@ -26,6 +26,7 @@ class CustomAuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
             'phone' => 'required',
+            'favorite' => 'required',
             'img' => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
 
@@ -54,6 +55,7 @@ class CustomAuthController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'phone' => $data['phone'],
+            'favorite' => $data['favorite'],
             'img' => $data['img'],
         ]);
     }

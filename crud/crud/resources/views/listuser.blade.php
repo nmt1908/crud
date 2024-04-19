@@ -12,17 +12,20 @@
                     <th>Tên đăng nhập</th>
                     <th>Email</th>
                     <th>SDT</th>
+                    <th>Favorite</th>
                     <th>img</th>
                     <th>Hành động</th>
                 </tr>
             </thead>
             <tbody>
+                
                 @foreach($listUser as $user)
                     <tr>
                         <td>{{$user->id}}</td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->phone}}</td>
+                        <td>{{$user->favorite}}</td>
                         <td><img src="{{ asset($user->img) }}" alt="" width="150"></td>
                         <td>
                             <button type="button" class="btn btn-primary">
@@ -37,6 +40,7 @@
                         </td>
                     </tr>
                 @endforeach
+                
             </tbody>
         </table>
         {{ $listUser->links('pagination::bootstrap-5') }}
@@ -58,7 +62,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
         <form action="{{ route('delete.user', $user->id) }}" method="POST">
-            @csrf
+            
             @method('DELETE')
             <button type="submit" class="btn btn-danger">Xóa</button>
         </form>
