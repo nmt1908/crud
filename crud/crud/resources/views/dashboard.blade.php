@@ -32,6 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('listuser') }}">ListUser</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('listinterests') }}">List interest</a>
+                    </li>
                 @endguest
             </ul>
         </div>

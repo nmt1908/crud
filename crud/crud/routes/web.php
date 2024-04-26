@@ -2,7 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 use App\Http\Controllers\CrudUserController;
-
+use App\Http\Controllers\InterestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +16,14 @@ Route::post('custom-registration', [CustomAuthController::class, 'customRegistra
 Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
 Route::delete('/delete-user/{id}', [CustomAuthController::class, 'deleteUser'])->name('delete.user');
 Route::get('listuser', [CustomAuthController::class, 'listuser'])->name('listuser');
+
+
+// danh sách sở thích
+
+Route::get('/interests', [InterestController::class, 'listinterests'])->name('listinterests');
+
+
+
 Route::get('update', [CrudUserController::class, 'updateUser'])->name('user.updateUser');
 Route::post('update', [CrudUserController::class, 'postUpdateUser'])->name('user.postUpdateUser');
 Route::get('read', [CrudUserController::class, 'readUser'])->name('user.readUser');

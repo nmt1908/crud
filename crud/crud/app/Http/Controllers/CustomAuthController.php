@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Hash;
 use Session;
 use App\Models\User;
+use App\Models\Interest;
 use Illuminate\Support\Facades\Auth;
 
 //Unknow
@@ -14,6 +16,7 @@ class CustomAuthController extends Controller
         return view('auth.login');
     }
 
+   
     public function registration()
     {
         return view('auth.registration');
@@ -87,6 +90,7 @@ class CustomAuthController extends Controller
         $listUser = User::paginate(5);
         return view('listuser', ['listUser' => $listUser]);
     }
+    
     public function signOut() {
         Session::flush();
         Auth::logout();
