@@ -47,16 +47,14 @@
         <p> Username</p>
         <p> Email</p>
         <p>Phone</p>
-        <p>MSSV</p>
-        <p>Avatar</p>
+        <p>Image</p>
         </div>
         <div class="col-md-8">
         <p>{{$user->id}}</p>
         <p>{{$user->name}}</p>
         <p>{{$user->email}}</p>
         <p>0{{$user->phone}}</p>
-        <p>{{$user->mssv}}</p>
-        <img src="{{ asset($user->img) }}" width="100px" height="100px" alt="avatar">
+        <img src="{{ asset($user->img) }}" width="100px" height="100px" alt="">
         </div>
       </div>
 

@@ -108,7 +108,6 @@ class CustomAuthController extends Controller
             $user->delete();
             return redirect()->back()->with('success', 'Người dùng đã được xóa thành công.');
         } catch (\Exception $e) {
-            // Xử lý nếu có lỗi khi xóa người dùng
             return redirect()->back()->with('error', 'Đã xảy ra lỗi khi xóa người dùng.');
         }
     }
