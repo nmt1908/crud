@@ -96,8 +96,21 @@ class CustomAuthController extends Controller
     public function deleteUser(Request $request, $id)
     {
         $user = User::findOrFail($id);
-        $user->delete();
 
-        return redirect()->back()->with('success', 'Người dùng đã được xóa thành công');
+        if ($user->posts()->exists()) {
+            return redirect()->back()->with('error', 'Người dùng có bài viết, không thể xóa.');
+        }
+        if ($user->favorites->count() > 0) {
+            return redirect()->back()->with('error', 'Người dùng có sở thích, không thể xóa.');
+        }
+
+        try {
+            $user->delete();
+            return redirect()->back()->with('success', 'Người dùng đã được xóa thành công.');
+        } catch (\Exception $e) {
+            // Xử lý nếu có lỗi khi xóa người dùng
+            return redirect()->back()->with('error', 'Đã xảy ra lỗi khi xóa người dùng.');
+        }
     }
+
 }

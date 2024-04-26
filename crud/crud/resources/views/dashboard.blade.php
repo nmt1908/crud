@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="{{ asset('storage/css/login.css')}}">
     <link rel="stylesheet" href="{{ asset('storage/css/list.css')}}">
     <link rel="stylesheet" href="{{ asset('storage/css/update.css')}}">
+    <link rel="stylesheet" href="{{ asset('storage/css/read.css')}}">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>

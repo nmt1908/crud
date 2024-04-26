@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -23,6 +25,8 @@ class User extends Authenticatable
         'password',
         'phone',
         'img',
+        'mssv',
+        'avatar',
     ];
 
     /**
@@ -43,4 +47,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function posts(): HasMany
+    {
+        return $this->hasMany(Posts::class);
+    }
+    public function favorites()
+    {
+        return $this->belongsToMany(Favorite::class, 'user_favorite', 'user_id', 'favorite_id');
+    }
 }

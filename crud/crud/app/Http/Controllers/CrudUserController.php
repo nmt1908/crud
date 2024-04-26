@@ -44,6 +44,7 @@ class CrudUserController extends Controller
 
 
         if ($request->hasFile('img')) {
+            
             $image = $request->file('img');
             $imageName = uniqid() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images'), $imageName);
@@ -52,7 +53,7 @@ class CrudUserController extends Controller
 
         $user->save();
 
-        return redirect("listuser")->withSuccess('You have signed-in');
+        return redirect("listuser")->withSuccess('Updated');
     }
 
     public function readUser(Request $request) {

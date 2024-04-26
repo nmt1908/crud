@@ -1,5 +1,19 @@
 @extends('dashboard')
+
 @section('content')
+<div class="notifi">
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+</div>
 <div class="container">
     <h2>Danh sách người dùng</h2>
     @if($listUser->isEmpty())
@@ -42,6 +56,7 @@
         {{ $listUser->links('pagination::bootstrap-5') }}
     @endif
 </div>
+
 
 <!-- Modal -->
 @foreach($listUser as $user)
